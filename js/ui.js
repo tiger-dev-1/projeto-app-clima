@@ -8,14 +8,14 @@ export function renderError(message) {
     resultDiv.innerHTML = `<p class="error" style="color: #e74c3c;">Erro: ${message}</p>`;
 }
 
-export function renderWeather(coords, weather) {
-    const { temperature, windspeed } = weather.current_weather;
+export function renderWeather(weatherInfo) {
+    const { cityName, temp, description } = weatherInfo;
     
     resultDiv.innerHTML = `
         <div class="weather-card">
-            <h2>${coords.name}, ${coords.country || ''}</h2>
-            <p class="temp">${temperature}°C</p>
-            <p class="details">Vento: ${windspeed} km/h</p>
+            <h2>${cityName}</h2>
+            <p class="temp">${temp}°C</p>
+            <p class="details">${description}</p>
         </div>
     `;
 }

@@ -1,4 +1,4 @@
-import { getCoordinates, getWeather } from './api.js';
+import { getCityWeather } from './api.js';
 import { renderWeather, renderError, renderLoading } from './ui.js';
 
 const searchBtn = document.getElementById('searchBtn');
@@ -11,9 +11,8 @@ async function handleSearch() {
     renderLoading();
 
     try {
-        const coords = await getCoordinates(city);
-        const weather = await getWeather(coords.latitude, coords.longitude);
-        renderWeather(coords, weather);
+        const weatherInfo = await getCityWeather(city);
+        renderWeather(weatherInfo);
     } catch (error) {
         renderError(error.message);
     }
