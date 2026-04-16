@@ -62,9 +62,19 @@ Para controlar a execução da suíte de testes, siga os passos abaixo no arquiv
 
 ## 📸 Demonstração
 
-![Página Inicial do App](assets/img/screenshot-desktop.png)
+### Comparativo: Interface Inicial e Resultados (Dia vs Noite)
 
-_Interface principal do aplicativo exibindo a consulta de clima em tempo real._
+<div align="center">
+  <!-- Telas Iniciais -->
+  <img src="./assets/images/home-page-light-theme.png" alt="Tela Inicial - Dia" width="400">
+  <img src="./assets/images/home-page-dark-theme.png" alt="Tela Inicial - Noite" width="400">
+  <br>
+  <!-- Resultados da Busca -->
+  <img src="./assets/images/weather-search-light-theme.png" alt="Resultado da Busca - Dia" width="400">
+  <img src="./assets/images/weather-search-dark-theme.png" alt="Resultado da Busca - Noite" width="400">
+</div>
+
+_Demonstração visual do sistema de temas automáticos e exibição dos dados meteorológicos._
 
 ---
 
