@@ -1,7 +1,7 @@
 import { getCityWeather } from './api.js';
 
 /**
- * Suíte de testes simplificada para o App de Clima
+ * Executa uma série de testes de integração para validar a API e o comportamento visual.
  */
 async function runTests() {
     console.log("🧪 Iniciando testes de integração...");
@@ -47,10 +47,7 @@ async function runTests() {
         console.error("❌ Teste 4: Falhou! O sistema não soube lidar com acentos ou espaços.", error.message);
     }
 
-    console.log("🏁 Testes finalizados.");
-}
-
- // Caso de Teste 5: Verificação Visual de Temas (Dia/Noite)
+    // Caso de Teste 5: Verificação Visual de Temas (Dia/Noite)
     try {
         console.log("Teste 5: Iniciando demonstração visual de temas...");
         const body = document.body;
@@ -79,6 +76,6 @@ async function runTests() {
     }
 
     console.log("🏁 Testes finalizados.");
+}
 
-// Executa os testes
 runTests();

@@ -4,6 +4,9 @@ import { renderWeather, renderError, renderLoading } from './ui.js';
 const searchBtn = document.getElementById('searchBtn');
 const cityInput = document.getElementById('cityInput');
 
+/**
+ * Define o tema da página (claro/escuro) baseado no horário comercial (09h-18h).
+ */
 function applyTheme() {
     const hour = new Date().getHours();
     const isDay = hour >= 9 && hour < 18;
@@ -17,6 +20,9 @@ function applyTheme() {
     }
 }
 
+/**
+ * Gerencia o fluxo de busca: valida entrada, dispara o loading e renderiza o resultado ou erro.
+ */
 async function handleSearch() {
     const city = cityInput.value.trim();
     if (!city) return;

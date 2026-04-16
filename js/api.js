@@ -1,3 +1,8 @@
+/**
+ * Converte o nome de uma cidade em coordenadas geográficas (lat/lon).
+ * @param {string} city - Nome da cidade para busca.
+ * @returns {Promise<Object>} Objeto contendo latitude, longitude e nome formatado.
+ */
 export async function getCoordinates(city) {
     // encodeURIComponent garante que espaços e acentos não quebrem a URL
     const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1&language=pt&format=json`;
@@ -14,6 +19,12 @@ export async function getCoordinates(city) {
     return data.results[0]; // Retorna lat, lon e nome formatado
 }
 
+/**
+ * Busca os dados meteorológicos atuais baseados em coordenadas.
+ * @param {number} lat - Latitude.
+ * @param {number} lon - Longitude.
+ * @returns {Promise<Object>} JSON bruto com as informações do clima.
+ */
 export async function getWeather(lat, lon) {
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`;
     const response = await fetch(url);
@@ -23,7 +34,11 @@ export async function getWeather(lat, lon) {
     return response.json();
 }
 
-// Função auxiliar para traduzir os códigos da Open-Meteo
+/**
+ * Traduz o código numérico da API (WMO Weather interpretation codes) para texto.
+ * @param {number} code - Código da condição climática.
+ * @returns {string} Descrição amigável em português.
+ */
 function getWeatherDescription(code) {
     const mapping = {
         0: "Céu limpo",
@@ -39,8 +54,10 @@ function getWeatherDescription(code) {
 }
 
 /**
- * Função solicitada pelo curso: recebe a cidade e retorna o JSON mastigado.
+ * Função principal de integração: coordena a busca de localização e clima.
  * Trata erros de nome inválido, rede e falhas de API através das funções internas.
+ * @param {string} city - Nome da cidade digitada pelo usuário.
+ * @returns {Promise<Object>} Dados processados prontos para a interface (UI).
  */
 export async function getCityWeather(city) {
     // 1. Busca coordenadas (já trata cidade inválida e erro de rede)
