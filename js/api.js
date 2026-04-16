@@ -1,5 +1,6 @@
 export async function getCoordinates(city) {
-    const url = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=pt&format=json`;
+    // encodeURIComponent garante que espaços e acentos não quebrem a URL
+    const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1&language=pt&format=json`;
     const response = await fetch(url);
     
     if (!response.ok) throw new Error("Erro ao conectar com o serviço de localização");
