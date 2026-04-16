@@ -4,6 +4,19 @@ import { renderWeather, renderError, renderLoading } from './ui.js';
 const searchBtn = document.getElementById('searchBtn');
 const cityInput = document.getElementById('cityInput');
 
+function applyTheme() {
+    const hour = new Date().getHours();
+    const isDay = hour >= 9 && hour < 18;
+    
+    if (isDay) {
+        document.body.classList.add('day-theme');
+        document.body.classList.remove('night-theme');
+    } else {
+        document.body.classList.add('night-theme');
+        document.body.classList.remove('day-theme');
+    }
+}
+
 async function handleSearch() {
     const city = cityInput.value.trim();
     if (!city) return;
@@ -24,3 +37,9 @@ searchBtn.addEventListener('click', handleSearch);
 cityInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') handleSearch();
 });
+
+// Inicializa o tema ao carregar
+applyTheme();
+
+// Verifica o tema a cada minuto para caso o horário mude com a página aberta
+setInterval(applyTheme, 60000);

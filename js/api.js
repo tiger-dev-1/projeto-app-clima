@@ -50,11 +50,16 @@ export async function getCityWeather(city) {
     const weatherData = await getWeather(coords.latitude, coords.longitude);
     
     const { temperature, weathercode } = weatherData.current_weather;
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 
     // 3. Retorna o objeto exatamente como pedido
     return {
         cityName: coords.name,
+        state: coords.admin1 || "",
+        country: coords.country || "",
         temp: temperature,
-        description: getWeatherDescription(weathercode)
+        description: getWeatherDescription(weathercode),
+        time: timeString
     };
 }

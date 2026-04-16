@@ -1,0 +1,93 @@
+/* Reset básico para remover margens padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* O segredo: html e body precisam de 100% de altura */
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Temas controlados pelo JavaScript */
+.day-theme {
+    background-color: #FAF9F6; /* Off-white */
+    color: #2C3E50;
+}
+
+.day-theme #cityInput {
+    background-color: #FFFFFF;
+    color: #2C3E50;
+}
+
+.night-theme {
+    background-color: #0F0F0F; /* Onyx Black */
+    color: #ECF0F1;
+}
+
+.night-theme #cityInput {
+    background-color: #1A1A1A;
+    color: #ECF0F1;
+    border-color: #333;
+}
+
+/* Container principal */
+.container {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 450px;
+    background-color: rgba(128, 128, 128, 0.05); /* Um fundo sutil para dar forma */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#cityInput {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#searchBtn {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#searchBtn:hover {
+    background-color: #2980b9;
+}
+
+.temp {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 15px 0;
+}

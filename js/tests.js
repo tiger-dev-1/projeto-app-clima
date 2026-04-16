@@ -50,5 +50,35 @@ async function runTests() {
     console.log("🏁 Testes finalizados.");
 }
 
+ // Caso de Teste 5: Verificação Visual de Temas (Dia/Noite)
+    try {
+        console.log("Teste 5: Iniciando demonstração visual de temas...");
+        const body = document.body;
+        const originalIsDay = body.classList.contains('day-theme');
+
+        console.log("🌞 Forçando TEMA CLARO (Visualização de 3 segundos)...");
+        body.classList.add('day-theme');
+        body.classList.remove('night-theme');
+        
+        await new Promise(resolve => setTimeout(resolve, 3000));
+
+        console.log("🌙 Forçando TEMA ESCURO (Visualização de 3 segundos)...");
+        body.classList.add('night-theme');
+        body.classList.remove('day-theme');
+
+        await new Promise(resolve => setTimeout(resolve, 3000));
+
+        // Restaura o tema correto baseado no horário atual
+        console.log("♻️ Restaurando tema automático do sistema...");
+        body.classList.toggle('day-theme', originalIsDay);
+        body.classList.toggle('night-theme', !originalIsDay);
+        
+        console.log("✅ Teste 5: Ciclo visual concluído com sucesso.");
+    } catch (error) {
+        console.error("❌ Teste 5: Erro ao alternar temas.", error.message);
+    }
+
+    console.log("🏁 Testes finalizados.");
+
 // Executa os testes
 runTests();
