@@ -76,6 +76,15 @@ Para controlar a execução da suíte de testes, siga os passos abaixo no arquiv
 
 _Demonstração visual do sistema de temas automáticos e exibição dos dados meteorológicos._
 
+
+_Demonstração visual do sistema de temas automáticos e exibição dos dados meteorológicos._
+
+## 🚀 Próximos Passos (Melhorias Futuras)
+
+1. **Comparação de Cidades:** Implementação de suporte para múltiplos cartões simultâneos, permitindo comparar o clima de duas ou mais cidades na mesma tela.
+2. **Previsão Estendida:** Inclusão de previsão meteorológica para os próximos 5 dias, apresentando as temperaturas máxima e mínima de cada período.
+3. **Evolução de UX/UI:** Refinamentos contínuos na interface e na experiência do usuário para tornar a navegação ainda mais fluida e moderna.
+
 ---
 
 _Projeto desenvolvido para fins educacionais._
