@@ -8,8 +8,11 @@ O sistema consome dados reais da API pública [Open-Meteo](https://open-meteo.co
 
 - **Busca Inteligente:** Encontre o clima de qualquer cidade do mundo.
 - **Tratamento de Nomes:** O sistema entende acentos e espaços (ex: "São Paulo" ou "Cuiabá").
-- **Interface Amigável:** Exibição clara em cartões de fácil leitura.
+- **Temas Dinâmicos (Dia/Noite):** A interface altera automaticamente suas cores entre o modo claro (09h às 18h) e o modo escuro (restante do dia).
+- **Localização Detalhada:** Exibição do Estado e País para garantir que você saiba exatamente de onde vêm os dados.
+- **Horário da Consulta:** Exibe o momento exato em que as informações meteorológicas foram resgatadas.
 - **Mensagens de Erro:** Caso a cidade não seja encontrada ou haja falha na internet, o app avisa você de forma educada.
+- **Interface Centralizada:** Design focado na experiência do usuário, mantendo o conteúdo perfeitamente alinhado em qualquer tamanho de tela.
 
 ## 🚀 Como Executar o Projeto
 
@@ -18,21 +21,24 @@ Como este projeto utiliza módulos modernos do JavaScript, ele não pode ser abe
 1. **Baixe o projeto:** Baixe a pasta completa (ou o arquivo .zip) e extraia no seu computador.
 2. **Abra no VS Code:** Abra a pasta do projeto no seu editor Visual Studio Code.
 3. **Instale a Extensão:** Procure na aba de extensões por **"Live Server"** (ou similar) e instale-a.
-4. **Inicie o App:** 
+4. **Inicie o App:**
    - Com o arquivo `index.html` aberto, clique no botão **"Go Live"** no canto inferior direito do VS Code.
    - Uma nova aba abrirá automaticamente no seu navegador com o aplicativo funcionando!
 
 ## 🧪 Testes Automatizados
 
-O projeto conta com uma suíte de testes integrada para garantir que tudo funcione conforme o esperado, verificando desde cidades válidas até casos de erro.
+O projeto conta com uma suíte de testes integrada que valida a lógica de negócios e o comportamento visual.
 
 ### Como ver os testes:
+
 1. No seu navegador, com o app aberto, aperte a tecla **F12** (ou clique com o botão direito e vá em "Inspecionar").
 2. Clique na aba **Console**.
-3. Você verá os logs de "🧪 Iniciando testes..." com os resultados de cada validação.
+3. Você verá os logs das validações de API e o **Teste Visual de Temas**, que alterna as cores da página automaticamente para demonstração.
 
 ### Como desativar os testes:
+
 Se você quiser esconder os testes para que apenas o app de clima apareça no console, siga este passo:
+
 1. Abra o arquivo `index.html`.
 2. Procure pela linha:
    ```html
@@ -52,4 +58,5 @@ Se você quiser esconder os testes para que apenas o app de clima apareça no co
 - **Open-Meteo API:** Fonte de dados meteorológicos gratuita e aberta.
 
 ---
-*Projeto desenvolvido para fins educacionais.*
+
+_Projeto desenvolvido para fins educacionais._
