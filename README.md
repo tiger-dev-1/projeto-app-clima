@@ -12,6 +12,7 @@ O sistema consome dados reais da API pública [Open-Meteo](https://open-meteo.co
 - **Localização Detalhada:** Exibição do Estado e País para garantir que você saiba exatamente de onde vêm os dados.
 - **Horário da Consulta:** Exibe o momento exato em que as informações meteorológicas foram resgatadas.
 - **Mensagens de Erro:** Caso a cidade não seja encontrada ou haja falha na internet, o app avisa você de forma educada.
+- **Segurança (Anti-XSS):** Manipulação segura do DOM para evitar injeção de scripts maliciosos.
 - **Interface Centralizada:** Design focado na experiência do usuário, mantendo o conteúdo perfeitamente alinhado em qualquer tamanho de tela.
 
 ## 🚀 Como Executar o Projeto
@@ -53,6 +54,17 @@ Para controlar a execução da suíte de testes, siga os passos abaixo no arquiv
 - **CSS3:** Estilização e layout responsivo.
 - **JavaScript (ES6+):** Lógica, consumo de API assíncrona e módulos.
 - **Open-Meteo API:** Fonte de dados meteorológicos gratuita e aberta.
+
+## ⚖️ Licença e Privacidade
+
+- **Atribuição:** Dados fornecidos por [Open-Meteo.com](https://open-meteo.com/) (CC BY 4.0).
+- **Privacidade:** O app não coleta nem armazena dados pessoais dos usuários.
+
+## 📸 Demonstração
+
+![Página Inicial do App](assets/img/screenshot-desktop.png)
+
+_Interface principal do aplicativo exibindo a consulta de clima em tempo real._
 
 ---
 

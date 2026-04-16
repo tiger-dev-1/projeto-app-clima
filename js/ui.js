@@ -21,14 +21,23 @@ export function renderError(message) {
  */
 export function renderWeather(weatherInfo) {
     const { cityName, state, country, temp, description, time } = weatherInfo;
-    const location = state ? `${cityName}, ${state} - ${country}` : `${cityName} - ${country}`;
-    
-    resultDiv.innerHTML = `
-        <div class="weather-card">
-            <h2 class="location-title">${location}</h2>
-            <p class="temp">${temp}°C</p>
-            <p class="details">${description}</p>
-            <p class="timestamp">Consulta realizada às ${time}</p>
-        </div>
+    const locationText = state ? `${cityName}, ${state} - ${country}` : `${cityName} - ${country}`;
+
+    // Limpamos o conteúdo anterior e criamos o card de forma segura
+    resultDiv.innerHTML = ''; 
+    const card = document.createElement('div');
+    card.className = 'weather-card';
+
+    card.innerHTML = `
+        <h2 class="location-title"></h2>
+        <p class="temp">${temp}°C</p>
+        <p class="details"></p>
+        <p class="timestamp">Consulta realizada às ${time}</p>
     `;
+
+    // Inserimos os dados sensíveis como texto puro para evitar injeção de código
+    card.querySelector('.location-title').textContent = locationText;
+    card.querySelector('.details').textContent = description;
+    
+    resultDiv.appendChild(card);
 }
