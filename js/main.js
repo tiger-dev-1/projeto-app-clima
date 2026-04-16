@@ -27,6 +27,7 @@ async function handleSearch() {
     const city = cityInput.value.trim();
     if (!city) return;
 
+    searchBtn.disabled = true; // Evita múltiplas requisições simultâneas
     renderLoading();
 
     try {
@@ -34,6 +35,8 @@ async function handleSearch() {
         renderWeather(weatherInfo);
     } catch (error) {
         renderError(error.message);
+    } finally {
+        searchBtn.disabled = false;
     }
 }
 

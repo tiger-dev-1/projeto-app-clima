@@ -27,28 +27,25 @@ Como este projeto utiliza módulos modernos do JavaScript, ele não pode ser abe
 
 ## 🧪 Testes Automatizados
 
-O projeto conta com uma suíte de testes integrada que valida a lógica de negócios e o comportamento visual.
+O projeto conta com uma suíte de testes integrada que valida a lógica de negócios e o comportamento visual. **Por padrão, os testes estão desativados** para garantir uma navegação fluida e sem interrupções visuais.
 
 ### Como ver os testes:
 
 1. No seu navegador, com o app aberto, aperte a tecla **F12** (ou clique com o botão direito e vá em "Inspecionar").
 2. Clique na aba **Console**.
-3. Você verá os logs das validações de API e o **Teste Visual de Temas**, que alterna as cores da página automaticamente para demonstração.
+3. Caso ativados, você verá os logs das validações de API e o **Teste Visual de Temas**, que alterna as cores da página automaticamente para demonstração.
 
-### Como desativar os testes:
+### Como ativar ou desativar os testes:
 
-Se você quiser esconder os testes para que apenas o app de clima apareça no console, siga este passo:
+Para controlar a execução da suíte de testes, siga os passos abaixo no arquivo `index.html`:
 
-1. Abra o arquivo `index.html`.
-2. Procure pela linha:
-   ```html
-   <script type="module" src="js/tests.js"></script>
-   ```
-3. Comente a linha adicionando `<!--` no início e `-->` no fim, assim:
+1. Localize a linha próxima ao final do arquivo que faz a chamada do script `js/tests.js`.
+2. **Para ativar:** Remova as tags de comentário `<!--` e `-->`.
+3. **Para desativar:** Envolva a tag com os comentários, deixando-a desta forma:
    ```html
    <!-- <script type="module" src="js/tests.js"></script> -->
    ```
-4. Salve o arquivo e os testes não serão mais executados.
+4. Salve o arquivo e a alteração será aplicada instantaneamente pelo navegador.
 
 ## 🛠️ Tecnologias Utilizadas
 

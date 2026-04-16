@@ -34,23 +34,25 @@ export async function getWeather(lat, lon) {
     return response.json();
 }
 
+/** Mapeamento de códigos WMO movido para fora da função para evitar recriação em memória */
+const WEATHER_MAPPING = {
+    0: "Céu limpo",
+    1: "Ensolarado", 2: "Parcialmente Nublado", 3: "Encoberto",
+    45: "Nevoeiro", 48: "Nevoeiro com Rima",
+    51: "Garoa leve", 53: "Garoa moderada", 55: "Garoa densa",
+    61: "Chuva leve", 63: "Chuva moderada", 65: "Chuva forte",
+    71: "Neve leve", 73: "Neve moderada", 75: "Neve forte",
+    80: "Pancadas de Chuva Leves", 81: "Pancadas de Chuva Moderadas", 82: "Pancadas de chuva Fortes",
+    95: "Trovoada Leve a Moderada",
+};
+
 /**
  * Traduz o código numérico da API (WMO Weather interpretation codes) para texto.
  * @param {number} code - Código da condição climática.
  * @returns {string} Descrição amigável em português.
  */
 function getWeatherDescription(code) {
-    const mapping = {
-        0: "Céu limpo",
-        1: "Ensolarado", 2: "Parcialmente Nublado", 3: "Encoberto",
-        45: "Nevoeiro", 48: "Nevoeiro com Rima",
-        51: "Garoa leve", 53: "Garoa moderada", 55: "Garoa densa",
-        61: "Chuva leve", 63: "Chuva moderada", 65: "Chuva forte",
-        71: "Neve leve", 73: "Neve moderada", 75: "Neve forte",
-        80: "Pancadas de Chuva Leves", 81: "Pancadas de Chuva Moderadas", 82: "Pancadas de chuva Fortes",
-        95: "Trovoada Leve a Moderada",
-    };
-    return mapping[code] || "Condição desconhecida";
+    return WEATHER_MAPPING[code] || "Condição desconhecida";
 }
 
 /**
